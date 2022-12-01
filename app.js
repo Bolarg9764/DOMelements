@@ -10,9 +10,11 @@ body.addEventListener('click', () => {
                                
  });*/
 
-
-const btnUpdate = document.getElementById("btn-main");
-const btnToggle = document.querySelector(".btn-toggle");
+/* VARIABLE DECLARATION */
+ //const btnUpdate = document.getElementById("btn-main");
+ const btnCreate = document.getElementById("btn-main");
+ const btnRemove = document.querySelector(".btn-remove");
+ const btnToggle = document.querySelector(".btn-toggle");
 
 
 
@@ -32,21 +34,21 @@ for(let i = 0; i<items.length; i++) {
   items[i].style.color = "orchid";
   
 }
-
+/* MAKE THIS HAPPEN WHEN CLICK EVENT OCCUR */
 /*btnUpdate.addEventListener('click', () => {
   headline.style.border = "solid 2px red";
   headline.style.fontSize = "60px"
-     const headline = document.getElementById("headline");
-     const input = document.querySelector('.input-main');            
+  const headline = document.getElementById("headline");
+  const input = document.querySelector('.input-main');            
           
-      headline.textContent = input.value;
-      headline.className = 'grow';
-      input.value = '';;*/
-                           
-                           
-                           }
- );
+  headline.textContent = input.value;
+  headline.className = 'grow';
+  input.value = '';
+  
+  
+});*/
 
+/* MAKE THIS HAPPEN WHEN CLICK EVENT OCCUR */
 btnToggle.addEventListener('click', () => {
 
   const listContainer = document.querySelector('.list-container');
@@ -59,11 +61,29 @@ if (listContainer.style.display === 'none') {
   listContainer.style.display = 'none';
   btnToggle.textContent  = "show List";
 }
-
-
  });
 
+/* MAKE THIS HAPPEN WHEN CLICK EVENT OCCUR */
+btnCreate.addEventListener('click', () => {
+const input = document.querySelector(".input-main");
+const list = document.querySelector("ul");
 
+list.insertAdjacentHTML(
+/* WITH INPUT ELEMENT WILL CAPTURE ANYTHING TYPED IN BY USER */
+'afterbegin', `<li>${input.value}</li>`
 
+);
 
+//const item = document.createElement("li");
+
+//item.textContent = input.value;
+//ADDING ITEM TO BOTTOM OF THE LIST
+//list.append(item);
+});
+
+btnRemove.addEventListener('click', () => {
+  const lastItem = document.querySelector("li:last-child");
+  lastItem.remove();
+
+});
 
